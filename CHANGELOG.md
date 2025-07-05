@@ -21,6 +21,117 @@ copy from UI changelog
 
 </details>
 
+v1.71.0 / v2.8.0 (2025-07-03)
+-------------------------------
+
+### Backend Changes
+
+#### ⛔ Breaking Changes
+
+* [es] materialize span.kind and span.status tags ([@pipiland2612](https://github.com/pipiland2612) in [#7272](https://github.com/jaegertracing/jaeger/pull/7272))
+* Make jaeger.es.disablelegacyid feature stable ([@yurishkuro](https://github.com/yurishkuro) in [#7267](https://github.com/jaegertracing/jaeger/pull/7267))
+
+#### ✨ New Features
+
+* [v2] switch memory backend to storage api v2 implementation ([@Manik2708](https://github.com/Manik2708) in [#7157](https://github.com/jaegertracing/jaeger/pull/7157))
+
+#### 🐞 Bug fixes, Minor Improvements
+
+* Fix panic when reading malformed warning attribute ([@yurishkuro](https://github.com/yurishkuro) in [#7293](https://github.com/jaegertracing/jaeger/pull/7293))
+* [fix] prevent panic when sanitizing read-only traces with multiple exporters ([@victornguen](https://github.com/victornguen) in [#7245](https://github.com/jaegertracing/jaeger/pull/7245))
+* Update elasticsearch to use olivere/elastic/v7 ([@pipiland2612](https://github.com/pipiland2612) in [#7244](https://github.com/jaegertracing/jaeger/pull/7244))
+* Repoint docker compose files to use cr.jaegertracing.io ([@jkowall](https://github.com/jkowall) in [#7240](https://github.com/jaegertracing/jaeger/pull/7240))
+* [es/v2] add metrics decorator for trace reader ([@Manik2708](https://github.com/Manik2708) in [#7201](https://github.com/jaegertracing/jaeger/pull/7201))
+
+#### 🚧 Experimental Features
+
+* [spm] getcallrate implementation ([@pipiland2612](https://github.com/pipiland2612) in [#7229](https://github.com/jaegertracing/jaeger/pull/7229))
+* [cassandra] give responsibility of creating v2 factory to storage backend ([@Manik2708](https://github.com/Manik2708) in [#7228](https://github.com/jaegertracing/jaeger/pull/7228))
+* Jaeger demo on kubernetes ([@chahatsagarmain](https://github.com/chahatsagarmain) in [#7262](https://github.com/jaegertracing/jaeger/pull/7262))
+* [clickhouse] implement gettraces for clickhouse storage ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7207](https://github.com/jaegertracing/jaeger/pull/7207))
+* [spm] and esclient to es/reader.go and refactor test ([@pipiland2612](https://github.com/pipiland2612) in [#7216](https://github.com/jaegertracing/jaeger/pull/7216))
+* Add skeleton implementation for es as metricstorage for spm ([@pipiland2612](https://github.com/pipiland2612) in [#7209](https://github.com/jaegertracing/jaeger/pull/7209))
+
+### 📊 UI Changes
+
+#### ⚙️ Refactoring
+
+* Convert `opsgraph.tsx` from class component to functional component ([@Parship999](https://github.com/Parship999) in [#2914](https://github.com/jaegertracing/jaeger-ui/pull/2914))
+* Convert `regiondemo.tsx` from class component to functional component ([@Parship999](https://github.com/Parship999) in [#2910](https://github.com/jaegertracing/jaeger-ui/pull/2910))
+* Convert `dividerdemo.tsx` from class component to functional component ([@Parship999](https://github.com/Parship999) in [#2909](https://github.com/jaegertracing/jaeger-ui/pull/2909))
+* Convert `draggablemanagerdemo.tsx` from class component to functional component ([@Parship999](https://github.com/Parship999) in [#2908](https://github.com/jaegertracing/jaeger-ui/pull/2908))
+* Convert `nameselector.tsx` from class component to functional component ([@Parship999](https://github.com/Parship999) in [#2889](https://github.com/jaegertracing/jaeger-ui/pull/2889))
+* Convert `copyicon.tsx` from class component to functional component ([@Parship999](https://github.com/Parship999) in [#2887](https://github.com/jaegertracing/jaeger-ui/pull/2887))
+
+</details>
+
+v1.70.0 / v2.7.0 (2025-06-10)
+-------------------------------
+
+### Backend Changes
+
+#### ✨ New Features
+
+* [feat] use v2 es/os storage in jaeger-v2 ([@Manik2708](https://github.com/Manik2708) in [#7151](https://github.com/jaegertracing/jaeger/pull/7151))
+
+#### 🐞 Bug fixes, Minor Improvements
+
+* Feat: add option to disable elasticsearch health check ([@timonegk](https://github.com/timonegk) in [#7212](https://github.com/jaegertracing/jaeger/pull/7212))
+* Fix(elasticsearch): respect explicitly configured replicas=0 in index… ([@masihkhatibzadeh99](https://github.com/masihkhatibzadeh99) in [#7160](https://github.com/jaegertracing/jaeger/pull/7160))
+* Add sanitizers for negative span duration ([@iypetrov](https://github.com/iypetrov) in [#7122](https://github.com/jaegertracing/jaeger/pull/7122))
+* [fix] fix prometheus label value is not valid utf 8 cause api timeout ([@iypetrov](https://github.com/iypetrov) in [#7128](https://github.com/jaegertracing/jaeger/pull/7128))
+* Add retries to ilm client ([@iypetrov](https://github.com/iypetrov) in [#7120](https://github.com/jaegertracing/jaeger/pull/7120))
+* Add retry configuration to storage exporter ([@kumarlokesh](https://github.com/kumarlokesh) in [#7132](https://github.com/jaegertracing/jaeger/pull/7132))
+* [fix] restore es metrics ([@AnmolxSingh](https://github.com/AnmolxSingh) in [#7006](https://github.com/jaegertracing/jaeger/pull/7006))
+* [fix] propagate environment variables to binary from integration tests ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7112](https://github.com/jaegertracing/jaeger/pull/7112))
+
+#### 🚧 Experimental Features
+
+* [refactor] rework clickhouse schema structure ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7181](https://github.com/jaegertracing/jaeger/pull/7181))
+* [clickhouse] implement getoperations for trace reader in clickhouse storage ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7180](https://github.com/jaegertracing/jaeger/pull/7180))
+* [clickhouse] implement getservices for trace reader in clickhouse storage ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7159](https://github.com/jaegertracing/jaeger/pull/7159))
+* [v2] implement `getdependencies` for memory backend ([@Manik2708](https://github.com/Manik2708) in [#7154](https://github.com/jaegertracing/jaeger/pull/7154))
+* [v2] implement `gettraces` for memory backend ([@Manik2708](https://github.com/Manik2708) in [#7152](https://github.com/jaegertracing/jaeger/pull/7152))
+* [v2] implement `findtraceids` for memory backend ([@Manik2708](https://github.com/Manik2708) in [#7143](https://github.com/jaegertracing/jaeger/pull/7143))
+* Add description for docker-compose-elasticsearch.yml ([@pipiland2612](https://github.com/pipiland2612) in [#7146](https://github.com/jaegertracing/jaeger/pull/7146))
+* Add e2e test for docker-compose-elasticsearch.yml file ([@pipiland2612](https://github.com/pipiland2612) in [#7145](https://github.com/jaegertracing/jaeger/pull/7145))
+* Add docker-compose-elasticsearch.yml and its sample configuration ([@pipiland2612](https://github.com/pipiland2612) in [#7144](https://github.com/jaegertracing/jaeger/pull/7144))
+* [v2] implement `findtraces` for memory backend ([@Manik2708](https://github.com/Manik2708) in [#7062](https://github.com/jaegertracing/jaeger/pull/7062))
+
+#### ⚙️ Refactoring
+
+* Relocate the docker directory from the root directory to under scripts/build ([@ris-tlp](https://github.com/ris-tlp) in [#7189](https://github.com/jaegertracing/jaeger/pull/7189))
+* [refactor] move sanitizer ([@yurishkuro](https://github.com/yurishkuro) in [#7158](https://github.com/jaegertracing/jaeger/pull/7158))
+* [es][v2] refactor the factory of v1 to make it reusable for v2 ([@Manik2708](https://github.com/Manik2708) in [#7086](https://github.com/jaegertracing/jaeger/pull/7086))
+* [refactor] allow storage cleaner to be overridden via environment variable ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7114](https://github.com/jaegertracing/jaeger/pull/7114))
+* [refactor] remove archive storage from grpc config ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7113](https://github.com/jaegertracing/jaeger/pull/7113))
+* [grpc] allow remote storage endpoint to be set via environment variable ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7111](https://github.com/jaegertracing/jaeger/pull/7111))
+* [refactor] use proto files from `jaeger-idl` for remote storage api ([@mahadzaryab1](https://github.com/mahadzaryab1) in [#7104](https://github.com/jaegertracing/jaeger/pull/7104))
+
+
+### 📊 UI Changes
+
+#### 🐞 Bug fixes, Minor Improvements
+
+* Fix react fragment key issues in multiple components ([@Parship999](https://github.com/Parship999) in [#2823](https://github.com/jaegertracing/jaeger-ui/pull/2823))
+* Move tracediff header chevron icon ([@Parship999](https://github.com/Parship999) in [#2845](https://github.com/jaegertracing/jaeger-ui/pull/2845))
+* Feat: filter logs based on the selected time range ([@tejas-raskar](https://github.com/tejas-raskar) in [#2844](https://github.com/jaegertracing/jaeger-ui/pull/2844))
+* Enhance tracediff ui components ([@Parship999](https://github.com/Parship999) in [#2806](https://github.com/jaegertracing/jaeger-ui/pull/2806))
+* Rewrite computeselftime to improve performance on trace statistics page ([@DamianMaslanka5](https://github.com/DamianMaslanka5) in [#2767](https://github.com/jaegertracing/jaeger-ui/pull/2767))
+* Fix array return pattern in `labeledlist` component ([@Parship999](https://github.com/Parship999) in [#2812](https://github.com/jaegertracing/jaeger-ui/pull/2812))
+* Allow json logs to occupy entire available width ([@tejas-raskar](https://github.com/tejas-raskar) in [#2814](https://github.com/jaegertracing/jaeger-ui/pull/2814))
+* Feat: convert monitoratmemptystate to a functional component ([@vishvamsinh28](https://github.com/vishvamsinh28) in [#2790](https://github.com/jaegertracing/jaeger-ui/pull/2790))
+* Replace deprecated `overlayclassname` with `classnames.root` ([@abhayporwals](https://github.com/abhayporwals) in [#2772](https://github.com/jaegertracing/jaeger-ui/pull/2772))
+* [fix]: reduce default minimum allowed zoom ([@hari45678](https://github.com/hari45678) in [#2775](https://github.com/jaegertracing/jaeger-ui/pull/2775))
+* Fix dependencygraph dag extra render ([@mdwyer6](https://github.com/mdwyer6) in [#2749](https://github.com/jaegertracing/jaeger-ui/pull/2749))
+
+#### ⚙️ Refactoring
+
+* Convert qualitymetrics components to functional components ([@Parship999](https://github.com/Parship999) in [#2856](https://github.com/jaegertracing/jaeger-ui/pull/2856))
+* Refactor: spandetailrow to functional component ([@tejas-raskar](https://github.com/tejas-raskar) in [#2827](https://github.com/jaegertracing/jaeger-ui/pull/2827))
+* Migrate tracetimelineviewerimpl to a functional component ([@tejas-raskar](https://github.com/tejas-raskar) in [#2816](https://github.com/jaegertracing/jaeger-ui/pull/2816))
+* Refactor canvasspangraph to functional component and improve test coverage ([@vishvamsinh28](https://github.com/vishvamsinh28) in [#2824](https://github.com/jaegertracing/jaeger-ui/pull/2824))
+
 v1.69.0 / v2.6.0 (2025-05-08)
 -------------------------------
 
